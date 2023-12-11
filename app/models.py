@@ -18,6 +18,6 @@ class Emp(models.Model):
     hire_date=models.DateField()
     sal=models.IntegerField(blank=True)
     comm=models.IntegerField(blank=True)
-    dept_no=models.OneToOneField(Dept,on_delete=models.CASCADE)
+    dept_no=models.ForeignKey(Dept,on_delete=models.CASCADE)
     def __str__(self):
         return self.e_name
