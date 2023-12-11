@@ -21,3 +21,14 @@ class Emp(models.Model):
     dept_no=models.ForeignKey(Dept,on_delete=models.CASCADE)
     def __str__(self):
         return self.e_name
+    
+class Bonus(models.Model):
+    emp_no=models.ForeignKey(Emp,on_delete=models.CASCADE)
+    bonus_sal=models.IntegerField()
+
+class Salgrade(models.Model):
+    grade=models.IntegerField()
+    losal=models.IntegerField()
+    hisal=models.IntegerField()
+    def __str__(self):
+        return self.grade
